@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
         SystemUiOverlayStyle.light.copyWith(statusBarColor: azulBase));
 
     return MaterialApp(
-      title: 'iSeneca',
+      title: 'iSéneca',
+      theme: ThemeData(
+        fontFamily: 'NunitoSans'
+      ),
       routes: {}, //TODO: routes
       debugShowCheckedModeBanner: false,
       //initialRoute: , TODO: initialRoute
