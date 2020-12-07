@@ -96,7 +96,15 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-            //TODO: 
+            Positioned(
+              bottom: 70,
+              left: MediaQuery.of(context).size.width / 4,
+              child: Image(
+                height: 100,
+                width: 180,
+                image: AssetImage('assets/icons/juntalogo_login.png'),
+              ),
+            ),
             Positioned(
               bottom: 0,
               left: 0,

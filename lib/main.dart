@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:iseneca/src/Colors/colors.dart';
 
 import 'src/pages/login_page.dart';
+import 'src/pages/home_page.dart';
 
 main(List<String> args) => runApp(MyApp());
 
@@ -14,13 +15,15 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'iSéneca',
-      theme: ThemeData(
-        fontFamily: 'NunitoSans'
-      ),
-      routes: {}, //TODO: routes
+      theme: ThemeData(fontFamily: 'NunitoSans'),
+      routes: {
+        '/': (context) => LoginPage(),
+        'home': (context) => HomePage(),
+        //TODO: Añadir el resto de rutas.
+      },
       debugShowCheckedModeBanner: false,
-      //initialRoute: , TODO: initialRoute
-      home: LoginPage(),
+      initialRoute: '/',
+      //home: LoginPage(),
 
       ///[CAMBIAR EL NOMBRE DE LA PAGINA PARA PODER EJECUTAR EL PROGRAMA]
     );
