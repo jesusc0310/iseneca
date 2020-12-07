@@ -96,29 +96,48 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
+            //TODO: 
             Positioned(
               bottom: 0,
               left: 0,
+              right: 0,
               child: Row(
                 children: [
-                  FlatButton(
-                    height: 80,
-                    color: azulBase,
-                    textTheme: ButtonTextTheme.primary,
-                    child: Text(
-                      'No soy cbarmor947',
-                      style: TextStyle(
-                        color: blanco,
-                        fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 30),
+                      width: MediaQuery.of(context).size.width / 2,
+                      height: 80,
+                      color: azulBase,
+                      child: Text(
+                        'No soy cbarmor947',
+                        style: TextStyle(
+                          color: blanco,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    onPressed: () {},
+                    onTap: () {},
                   ),
-                  FlatButton(
-                    height: 80,
-                    color: blanco,
-                    child: Text('Entrar con mi contraseña'),
-                    onPressed: () {},
+                  GestureDetector(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      width: MediaQuery.of(context).size.width / 2,
+                      height: 80,
+                      color: blanco,
+                      child: Text(
+                        'Entrar con\n mi contraseña',
+                        style: TextStyle(
+                          color: azulBase,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    onTap: () {},
                   ),
                 ],
               ),
