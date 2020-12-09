@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iseneca/src/Colors/colors.dart';
+import 'package:iseneca/src/pages/alumnado_page.dart';
 
 import 'src/pages/login_page.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {}, //TODO: routes
       debugShowCheckedModeBanner: false,
       //initialRoute: , TODO: initialRoute
-      home: LoginPage(),
+      home: AlumnadoPage(),
 
       ///[CAMBIAR EL NOMBRE DE LA PAGINA PARA PODER EJECUTAR EL PROGRAMA]
     );
