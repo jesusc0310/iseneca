@@ -39,7 +39,7 @@ class AlumnoElement {
     this.apellidos,
     this.urlFoto,
     this.cumple,
-    this.asiste = false,
+    this.asiste = true,
   });
 
   String nombre;

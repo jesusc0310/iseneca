@@ -13,7 +13,7 @@ class _AlumnoProvider {
   }
 
   Future<List<AlumnoElement>> cargarDatos() async {
-    Response resp = await http.get('https://flutter-varios-1d375.firebaseio.com/.json');
+    Response resp = await http.get('http://falcondptoinformatica.synology.me/Iseneca/index.php/Alumnos/Alumnos_listado');
     final datos = alumnoFromJson(resp.body);
     return datos.alumnos;
   }
