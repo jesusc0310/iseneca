@@ -53,7 +53,7 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
 
   Widget _listaAlumnos() {
     final List<Widget> opciones = [];
-    FutureBuilder(
+    return FutureBuilder(
       future: lista,
       builder: (BuildContext context, AsyncSnapshot<List<AlumnoElement>> snapshot) {
         if (!snapshot.hasData)
@@ -133,7 +133,7 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
               thickness: 1,
             ));
           });
-          return Column(
+          return ListView(
             children: opciones,
           );
         }
