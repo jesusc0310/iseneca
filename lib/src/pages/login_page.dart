@@ -86,12 +86,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 180),
+              padding: EdgeInsets.only(top: 170),
               child: Column(
                 children: [
                   fila1(),
+                  SizedBox(height: 10),
                   fila2(),
+                  SizedBox(height: 10),
                   fila3(),
+                  SizedBox(height: 5),
                   fila4(),
                 ],
               ),
@@ -162,11 +165,11 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         _botton('1'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('2'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('3'),
       ],
@@ -179,11 +182,11 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         _botton('4'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('5'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('6'),
       ],
@@ -196,11 +199,11 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         _botton('7'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('8'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('9'),
       ],
@@ -213,11 +216,11 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         _botonHuella(),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botton('0'),
         SizedBox(
-          width: 20,
+          width: 10,
         ),
         _botonBorrar(),
       ],
@@ -227,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _botton(String value) {
     return FlatButton(
       shape: CircleBorder(side: BorderSide(color: blanco)),
-      height: 100,
+      height: 90,
       color: null,
       textColor: blanco,
       child: Text(
@@ -243,7 +246,7 @@ class _LoginPageState extends State<LoginPage> {
       shape: CircleBorder(side: BorderSide(color: blanco)),
       color: null,
       textColor: blanco,
-      height: 100,
+      height: 90,
       child: Image(
         height: 50,
         image: AssetImage('assets/icons/login_print.png'),
