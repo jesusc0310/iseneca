@@ -56,7 +56,7 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
       future: lista,
       builder: (BuildContext context, AsyncSnapshot<List<AlumnoElement>> snapshot) {
         if (!snapshot.hasData)
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         else {
           snapshot.data.forEach((opcion) {
             final widgetTemp = ListTile(
