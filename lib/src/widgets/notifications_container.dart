@@ -9,8 +9,9 @@ class NotificationsContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: azulClarito,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5),
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(5),
+          bottomLeft: Radius.circular(5),
         ),
       ),
       height: 50,

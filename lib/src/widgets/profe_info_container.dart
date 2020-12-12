@@ -7,8 +7,9 @@ class ProfeInfoContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: blanco,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5),
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(5),
+          topLeft: Radius.circular(5),
         ),
       ),
       height: 100,

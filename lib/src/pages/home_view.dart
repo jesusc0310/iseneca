@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iseneca/src/widgets/profe_info_container.dart';
 import 'package:iseneca/src/widgets/notifications_container.dart';
+import 'package:iseneca/src/widgets/home_main_widget.dart';
 import 'package:iseneca/src/colors/colors.dart';
 
 class HomeView extends StatelessWidget {
@@ -55,21 +56,9 @@ class HomeView extends StatelessWidget {
                       bottom: BorderSide(color: gris),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        height: 50,
-                        image: AssetImage('assets/icons/db_alumnos.png'),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Alumnado',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  child: HomeMainWidget(
+                    asset: 'assets/icons/db_alumnos.png',
+                    title: 'Alumnado',
                   ),
                 ),
                 GestureDetector(
@@ -84,21 +73,9 @@ class HomeView extends StatelessWidget {
                         bottom: BorderSide(color: gris),
                       ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          height: 50,
-                          image: AssetImage('assets/icons/db_asistencia.png'),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          'Ausencias',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    child: HomeMainWidget(
+                      asset: 'assets/icons/db_asistencia.png',
+                      title: 'Ausencias',
                     ),
                   ),
                 ),
@@ -111,21 +88,9 @@ class HomeView extends StatelessWidget {
                       bottom: BorderSide(color: gris),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        height: 50,
-                        image: AssetImage('assets/icons/db_notas.png'),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Calificaciones',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  child: HomeMainWidget(
+                    asset: 'assets/icons/db_notas.png',
+                    title: 'Calificaciones',
                   ),
                 ),
               ],
@@ -146,21 +111,9 @@ class HomeView extends StatelessWidget {
                       right: BorderSide(color: gris),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        height: 50,
-                        image: AssetImage('assets/icons/db_tablon.png'),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Tablón de\nAnuncios',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  child: HomeMainWidget(
+                    asset: 'assets/icons/db_tablon.png',
+                    title: 'Tablón de\nAnuncios',
                   ),
                 ),
                 Container(

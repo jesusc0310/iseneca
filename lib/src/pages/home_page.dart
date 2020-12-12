@@ -12,12 +12,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Widget> _children;
-  int _currentIndex;
+  int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _currentIndex = 0;
     _children = [
       HomeView(),
       AlumnadoPage(),
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: azulOscuro,
-        selectedFontSize: 12,
+        selectedFontSize: 10,
         unselectedItemColor: grisOscuro,
         showUnselectedLabels: true,
         unselectedFontSize: 10,
