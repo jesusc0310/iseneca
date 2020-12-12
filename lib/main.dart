@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       initialRoute: 'home',
-      //home: LoginPage(),
 
       ///[CAMBIAR EL NOMBRE DE LA PAGINA PARA PODER EJECUTAR EL PROGRAMA]
     );

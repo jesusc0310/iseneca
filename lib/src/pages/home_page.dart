@@ -37,15 +37,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: blanco,
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: azulOscuro,
+        selectedFontSize: 12,
         unselectedItemColor: grisOscuro,
+        showUnselectedLabels: true,
+        unselectedFontSize: 10,
         items: [
           BottomNavigationBarItem(
             label: 'Inicio',
-            icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home_filled),
+            icon: ImageIcon(AssetImage('assets/icons/home.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/home_on.png')),
           ),
           BottomNavigationBarItem(
             label: 'Agenda',
@@ -54,8 +59,8 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             label: 'Comunicaciones',
-            icon: Icon(Icons.menu),
-            activeIcon: Icon(Icons.menu),
+            icon: ImageIcon(AssetImage('assets/icons/comunicaciones.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/comunicaciones_on.png')),
           ),
           BottomNavigationBarItem(
             label: 'Menu',
