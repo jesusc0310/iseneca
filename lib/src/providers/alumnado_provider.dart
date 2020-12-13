@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:iseneca/src/Alumno.dart';
+import 'package:iseneca/src/model/Alumno.dart';
 
 class _AlumnoProvider {
   List<Alumno> opciones = [];

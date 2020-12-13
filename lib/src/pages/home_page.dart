@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iseneca/src/colors/colors.dart';
 import 'alumnado_page.dart';
-import 'home_view.dart';
+import 'views/home_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);

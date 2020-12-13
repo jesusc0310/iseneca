@@ -12,7 +12,7 @@ class HomeMainWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image(
-          height: 50,
+          height: 45,
           image: AssetImage(asset),
         ),
         SizedBox(height: 5),
@@ -20,6 +20,7 @@ class HomeMainWidget extends StatelessWidget {
           title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 12.5
           ),
         ),
       ],

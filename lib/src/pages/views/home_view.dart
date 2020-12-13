@@ -125,22 +125,9 @@ class HomeView extends StatelessWidget {
                       right: BorderSide(color: gris),
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        height: 50,
-                        image: AssetImage('assets/icons/ic_covid.png'),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Información Covid',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ],
+                  child: HomeMainWidget(
+                    asset: 'assets/icons/ic_covid.png',
+                    title: 'Información Covid',
                   ),
                 ),
                 Container(
@@ -148,25 +135,10 @@ class HomeView extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 3 - 15,
                   decoration: BoxDecoration(
                     color: blanco,
-                    border: Border(
-                      bottom: BorderSide(color: gris),
-                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        height: 50,
-                        image: AssetImage('assets/icons/db_cuaderno.png'),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Cuaderno',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  child: HomeMainWidget(
+                    asset: 'assets/icons/db_cuaderno.png',
+                    title: 'Cuaderno',
                   ),
                 ),
               ],

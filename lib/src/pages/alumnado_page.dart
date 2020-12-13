@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:iseneca/src/Alumno.dart';
+import 'package:iseneca/src/model/Alumno.dart';
 import 'package:iseneca/src/Colors/colors.dart';
 import 'package:iseneca/src/providers/alumnado_provider.dart';
 

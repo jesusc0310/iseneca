@@ -24,12 +24,10 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         'home': (context) => HomePage(),
         'alumno': (context) => AlumnadoPage(),
-        //TODO: Añadir el resto de rutas.
+        //TODO: Añadir la ruta de la pagina de Jose y cambiar las direcciones.
       },
       debugShowCheckedModeBanner: false,
       initialRoute: 'home',
-
-      ///[CAMBIAR EL NOMBRE DE LA PAGINA PARA PODER EJECUTAR EL PROGRAMA]
     );
   }
 }
