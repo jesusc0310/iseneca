@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: blanco,
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: azulOscuro,
         selectedFontSize: 10,
@@ -53,8 +54,8 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             label: 'Agenda',
-            icon: Icon(Icons.watch_later_outlined),
-            activeIcon: Icon(Icons.watch_later),
+            icon: ImageIcon(AssetImage('assets/icons/agenda.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/agenda_on.png')),
           ),
           BottomNavigationBarItem(
             label: 'Comunicaciones',
