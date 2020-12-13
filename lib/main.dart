@@ -12,7 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle.light.copyWith(statusBarColor: azulBase));
+      SystemUiOverlayStyle.light.copyWith(statusBarColor: azulBase),
+    );
+
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     return MaterialApp(
       title: 'iSéneca',
@@ -20,14 +23,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         'home': (context) => HomePage(),
-        'alumno' : (context) => AlumnadoPage(),
-        //TODO: Añadir el resto de rutas.
+        'alumno': (context, {String curso, }) => AlumnadoPage(),
+        //TODO: Añadir la ruta de la pagina de Jose y cambiar las direcciones.
       },
       debugShowCheckedModeBanner: false,
-      initialRoute: 'alumno',
-      //home: LoginPage(),
-
-      ///[CAMBIAR EL NOMBRE DE LA PAGINA PARA PODER EJECUTAR EL PROGRAMA]
+      initialRoute: '/',
     );
   }
 }
