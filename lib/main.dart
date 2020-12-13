@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         'home': (context) => HomePage(),
-        'alumno': (context) => AlumnadoPage(),
+        'alumno': (context, {String curso, }) => AlumnadoPage(),
         //TODO: Añadir la ruta de la pagina de Jose y cambiar las direcciones.
       },
       debugShowCheckedModeBanner: false,
-      initialRoute: 'home',
+      initialRoute: '/',
     );
   }
 }
