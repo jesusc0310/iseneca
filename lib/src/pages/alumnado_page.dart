@@ -23,9 +23,16 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
   }
 
   Widget build(BuildContext context) {
+    final Map<String, String> mapa = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Listado Alumnos', style: TextStyle(color: Colors.white)),
+        title: Column(
+          children: [
+            Text('${mapa['asignatura']} (${mapa['curso']})',
+                style: TextStyle(color: Colors.white)),
+          ],
+        ),
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -54,7 +61,8 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
     final List<Widget> opciones = [];
     return FutureBuilder(
       future: lista,
-      builder: (BuildContext context, AsyncSnapshot<List<AlumnoElement>> snapshot) {
+      builder:
+          (BuildContext context, AsyncSnapshot<List<AlumnoElement>> snapshot) {
         if (!snapshot.hasData)
           return Center(child: CircularProgressIndicator());
         else {

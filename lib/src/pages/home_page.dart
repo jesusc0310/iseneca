@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iseneca/src/colors/colors.dart';
-import 'alumnado_page.dart';
+import 'horario_page.dart';
 import 'views/home_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _children = [
       HomeView(),
-      AlumnadoPage(),
+      HorarioPage(),
       Container(
         color: azulOscuro,
         height: double.infinity,

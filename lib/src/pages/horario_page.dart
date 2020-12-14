@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:iseneca/src/model/Horarios.dart';
 import 'package:iseneca/src/providers/horario_provider.dart';
-
+import 'package:iseneca/src/pages/alumnado_page.dart';
 
 class HorarioPage extends StatefulWidget {
   @override
@@ -26,11 +26,10 @@ class _HorarioPageState extends State<HorarioPage> {
         builder: (BuildContext context, AsyncSnapshot<Horarios> snapshot) {
           return (!snapshot.hasData)
               ? CircularProgressIndicator
-              : Stack(
-                  children:[
-                    Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+              : Stack(children: [
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
                         appBarHorario(snapshot.data.dia, snapshot.data.fecha),
                         Padding(
                           padding: EdgeInsets.all(10),
@@ -53,24 +52,23 @@ class _HorarioPageState extends State<HorarioPage> {
                           child: Text(
                             "No hay eventos disponibles",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.grey),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey),
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                       ]),
-                      Positioned(
-                        bottom: 70,
-                        right: 20,
-                              child: FloatingActionButton(
-                              child: Icon(Icons.more_vert),
-                              onPressed: () {},
-                            ),
-                      ),
-                  ] 
-                  
-              );
+                  Positioned(
+                    bottom: 70,
+                    right: 20,
+                    child: FloatingActionButton(
+                      child: Icon(Icons.more_vert),
+                      onPressed: () {},
+                    ),
+                  ),
+                ]);
         },
       ),
     );
@@ -86,7 +84,14 @@ class _HorarioPageState extends State<HorarioPage> {
         ? horario.curso
         : '${horario.asignatura}-[${horario.curso}]';
     return GestureDetector(
-      //onTap: () => Navigator.push(context, route),
+      onTap: () => Navigator.pushNamed(
+        context,
+        'alumno',
+        arguments: <String, String>{
+          'asignatura': horario.asignatura,
+          'curso': horario.curso
+        },
+      ),
       child: Padding(
         padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
         child: Container(

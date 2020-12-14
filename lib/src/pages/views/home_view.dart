@@ -62,7 +62,7 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, 'alumno'),
+                  onTap: () => Navigator.pushNamed(context, 'horario'),
                   child: Container(
                     height: 200,
                     width: MediaQuery.of(context).size.width / 3 - 10,
