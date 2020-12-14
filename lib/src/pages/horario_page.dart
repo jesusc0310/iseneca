@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:iseneca/src/Colors/colors.dart';
 import 'package:iseneca/src/model/Horarios.dart';
 import 'package:iseneca/src/providers/horario_provider.dart';
-import 'package:iseneca/src/pages/alumnado_page.dart';
 
 class HorarioPage extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _HorarioPageState extends State<HorarioPage> {
         future: horariosProvider.getHorarios(),
         builder: (BuildContext context, AsyncSnapshot<Horarios> snapshot) {
           return (!snapshot.hasData)
-              ? CircularProgressIndicator
+              ? Center(child: CircularProgressIndicator())
               : Stack(children: [
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,12 +77,15 @@ class _HorarioPageState extends State<HorarioPage> {
   Widget contenedor(Horario horario) {
     var backColor = chooseBackColor(horario.hInicio, horario.hFinal);
     var fontColor1 =
-        (backColor == Colors.grey[200]) ? Colors.black : Colors.white;
+        (backColor == gris) ? negro : blanco;
     var fontColor2 =
-        (backColor == Colors.grey[200]) ? Colors.grey : Colors.blue[200];
+        (backColor == gris) ? Colors.grey : azulClarito;
     var asigCurso = (horario.curso == 'Guardia')
         ? horario.curso
         : '${horario.asignatura}-[${horario.curso}]';
+    var numAlumnos = (horario.curso == 'Guardia')
+        ? '${horario.numAlumnos}'
+        : '${horario.numAlumnos} alumnos';
     return GestureDetector(
       onTap: () => Navigator.pushNamed(
         context,
@@ -96,7 +99,7 @@ class _HorarioPageState extends State<HorarioPage> {
         padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
         child: Container(
           width: double.infinity,
-          height: 60,
+          height: 80,
           decoration: BoxDecoration(
               color: backColor, borderRadius: BorderRadius.circular(5)),
           child: Row(
@@ -116,7 +119,8 @@ class _HorarioPageState extends State<HorarioPage> {
                     ),
                     Text(
                       horario.hFinal,
-                      style: TextStyle(color: fontColor2),
+                      style: TextStyle(
+                          color: fontColor2, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -135,8 +139,9 @@ class _HorarioPageState extends State<HorarioPage> {
                       height: 5,
                     ),
                     Text(
-                      '${horario.numAlumnos} alumnos',
-                      style: TextStyle(color: fontColor2),
+                      numAlumnos,
+                      style: TextStyle(
+                          color: fontColor2, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -153,7 +158,7 @@ class _HorarioPageState extends State<HorarioPage> {
     return Container(
       width: double.infinity,
       height: 120,
-      decoration: BoxDecoration(color: Color.fromRGBO(2, 84, 158, 1)),
+      decoration: BoxDecoration(color: azulBase),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -207,7 +212,7 @@ class _HorarioPageState extends State<HorarioPage> {
   }
 
   Color chooseBackColor(String inicio, String fin) {
-    var backColor = Colors.grey[200];
+    var backColor = gris;
     var now = DateTime.now();
     var horaInicio = (now.day < 10)
         ? DateTime.parse("${now.year}-${now.month}-0${now.day} $inicio:00")
@@ -217,7 +222,7 @@ class _HorarioPageState extends State<HorarioPage> {
         : DateTime.parse("${now.year}-${now.month}-${now.day} $fin:00");
 
     if (now.isAfter(horaInicio) && now.isBefore(horaFin))
-      backColor = Color.fromRGBO(2, 84, 158, 1);
+      backColor = azulBase;
 
     return backColor;
   }
