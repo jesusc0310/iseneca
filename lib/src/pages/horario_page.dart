@@ -25,7 +25,7 @@ class _HorarioPageState extends State<HorarioPage> {
         future: horariosProvider.getHorarios(),
         builder: (BuildContext context, AsyncSnapshot<Horarios> snapshot) {
           return (!snapshot.hasData)
-              ? CircularProgressIndicator
+              ? Center(child: CircularProgressIndicator())
               : Stack(
                   children:[
                     Column(
@@ -85,6 +85,9 @@ class _HorarioPageState extends State<HorarioPage> {
     var asigCurso = (horario.curso == 'Guardia')
         ? horario.curso
         : '${horario.asignatura}-[${horario.curso}]';
+    var numAlumnos = (horario.curso == 'Guardia')
+        ? '${horario.numAlumnos}'
+        : '${horario.numAlumnos} alumnos';
     return GestureDetector(
       //onTap: () => Navigator.push(context, route),
       child: Padding(
@@ -111,7 +114,7 @@ class _HorarioPageState extends State<HorarioPage> {
                     ),
                     Text(
                       horario.hFinal,
-                      style: TextStyle(color: fontColor2),
+                      style: TextStyle(color: fontColor2, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -130,8 +133,8 @@ class _HorarioPageState extends State<HorarioPage> {
                       height: 5,
                     ),
                     Text(
-                      '${horario.numAlumnos} alumnos',
-                      style: TextStyle(color: fontColor2),
+                      numAlumnos,
+                      style: TextStyle(color: fontColor2, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
