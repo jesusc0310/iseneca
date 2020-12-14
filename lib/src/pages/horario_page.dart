@@ -39,7 +39,7 @@ class _HorarioPageState extends State<HorarioPage> {
                           ),
                         ),
                         for (int i = 0; i < snapshot.data.horario.length; i++)
-                          contenedor(snapshot.data.horario[i]),
+                          contenedor(snapshot.data.horario[i], snapshot.data.dia, snapshot.data.fecha),
                         Padding(
                           padding: EdgeInsets.all(10),
                           child: Text(
@@ -74,7 +74,7 @@ class _HorarioPageState extends State<HorarioPage> {
     );
   }
 
-  Widget contenedor(Horario horario) {
+  Widget contenedor(Horario horario, String dia, String fecha) {
     var backColor = chooseBackColor(horario.hInicio, horario.hFinal);
     var fontColor1 =
         (backColor == gris) ? negro : blanco;
@@ -92,7 +92,11 @@ class _HorarioPageState extends State<HorarioPage> {
         'alumno',
         arguments: <String, String>{
           'asignatura': horario.asignatura,
-          'curso': horario.curso
+          'curso': horario.curso,
+          'horaInicio' : horario.hInicio,
+          'horaFinal' : horario.hFinal,
+          'dia' : dia,
+          'fecha' : fecha
         },
       ),
       child: Padding(

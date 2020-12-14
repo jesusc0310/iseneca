@@ -27,10 +27,14 @@ class _AlumnadoPageState extends State<AlumnadoPage> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        toolbarHeight: 85,
         title: Column(
           children: [
             Text('${mapa['asignatura']} (${mapa['curso']})',
-                style: TextStyle(color: Colors.white)),
+                style: TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+            Text('${mapa['horaInicio']} - ${mapa['horaFinal']} ${mapa['dia']} ${mapa['fecha'].substring(0, mapa['fecha'].length - 6)}',
+                style: TextStyle(fontSize: 14, color: Colors.white54, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
           ],
         ),
         leading: GestureDetector(
