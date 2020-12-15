@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
         'home': (context) => HomePage(),
         'horario' : (context) => HorarioPage(),
         'alumno': (context, {String curso, }) => AlumnadoPage(),
-        //TODO: Añadir la ruta de la pagina de Jose y cambiar las direcciones.
       },
       debugShowCheckedModeBanner: false,
       initialRoute: '/',

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:iseneca/src/Colors/colors.dart';
 import 'package:iseneca/src/model/Horarios.dart';
 import 'package:iseneca/src/providers/horario_provider.dart';
-import 'package:iseneca/src/pages/views/home_view.dart';
 
 class HorarioPage extends StatefulWidget {
   @override
@@ -11,8 +10,6 @@ class HorarioPage extends StatefulWidget {
 }
 
 class _HorarioPageState extends State<HorarioPage> {
-  List<Widget> _children;
-
   @override
   void initState() {
     Timer.periodic(new Duration(seconds: 60), (timer) {
@@ -194,7 +191,6 @@ class _HorarioPageState extends State<HorarioPage> {
   }
 
   Widget appBarHorario(String dia, String fecha) {
-    var date = DateTime.now();
     return Container(
       width: double.infinity,
       height: 120,
