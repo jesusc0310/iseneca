@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iseneca/src/Colors/colors.dart';
 import 'package:iseneca/src/model/Horarios.dart';
 import 'package:iseneca/src/providers/horario_provider.dart';
+import 'package:iseneca/src/pages/views/home_view.dart';
 
 class HorarioPage extends StatefulWidget {
   @override
@@ -10,6 +11,8 @@ class HorarioPage extends StatefulWidget {
 }
 
 class _HorarioPageState extends State<HorarioPage> {
+  List<Widget> _children;
+
   @override
   void initState() {
     Timer.periodic(new Duration(seconds: 60), (timer) {
@@ -20,6 +23,8 @@ class _HorarioPageState extends State<HorarioPage> {
 
   @override
   Widget build(BuildContext context) {
+    int _currentIndex = 1;
+
     return Scaffold(
       body: FutureBuilder(
         future: horariosProvider.getHorarios(),
@@ -39,7 +44,8 @@ class _HorarioPageState extends State<HorarioPage> {
                           ),
                         ),
                         for (int i = 0; i < snapshot.data.horario.length; i++)
-                          contenedor(snapshot.data.horario[i], snapshot.data.dia, snapshot.data.fecha),
+                          contenedor(snapshot.data.horario[i],
+                              snapshot.data.dia, snapshot.data.fecha),
                         Padding(
                           padding: EdgeInsets.all(10),
                           child: Text(
@@ -71,15 +77,45 @@ class _HorarioPageState extends State<HorarioPage> {
                 ]);
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: azulOscuro,
+        selectedFontSize: 10,
+        unselectedItemColor: grisOscuro,
+        showUnselectedLabels: true,
+        unselectedFontSize: 10,
+        items: [
+          BottomNavigationBarItem(
+            label: 'Inicio',
+            icon: ImageIcon(AssetImage('assets/icons/home.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/home_on.png')),
+          ),
+          BottomNavigationBarItem(
+            label: 'Agenda',
+            icon: ImageIcon(AssetImage('assets/icons/agenda.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/agenda_on.png')),
+          ),
+          BottomNavigationBarItem(
+            label: 'Comunicaciones',
+            icon: ImageIcon(AssetImage('assets/icons/comunicaciones.png')),
+            activeIcon:
+                ImageIcon(AssetImage('assets/icons/comunicaciones_on.png')),
+          ),
+          BottomNavigationBarItem(
+            label: 'Menu',
+            icon: ImageIcon(AssetImage('assets/icons/menu.png')),
+            activeIcon: ImageIcon(AssetImage('assets/icons/menu_on.png')),
+          ),
+        ],
+      ),
     );
   }
 
   Widget contenedor(Horario horario, String dia, String fecha) {
     var backColor = chooseBackColor(horario.hInicio, horario.hFinal);
-    var fontColor1 =
-        (backColor == gris) ? negro : blanco;
-    var fontColor2 =
-        (backColor == gris) ? Colors.grey : azulClarito;
+    var fontColor1 = (backColor == gris) ? negro : blanco;
+    var fontColor2 = (backColor == gris) ? Colors.grey : azulClarito;
     var asigCurso = (horario.curso == 'Guardia')
         ? horario.curso
         : '${horario.asignatura}-[${horario.curso}]';
@@ -93,10 +129,10 @@ class _HorarioPageState extends State<HorarioPage> {
         arguments: <String, String>{
           'asignatura': horario.asignatura,
           'curso': horario.curso,
-          'horaInicio' : horario.hInicio,
-          'horaFinal' : horario.hFinal,
-          'dia' : dia,
-          'fecha' : fecha
+          'horaInicio': horario.hInicio,
+          'horaFinal': horario.hFinal,
+          'dia': dia,
+          'fecha': fecha
         },
       ),
       child: Padding(
@@ -225,8 +261,7 @@ class _HorarioPageState extends State<HorarioPage> {
         ? DateTime.parse("${now.year}-${now.month}-0${now.day} $fin:00")
         : DateTime.parse("${now.year}-${now.month}-${now.day} $fin:00");
 
-    if (now.isAfter(horaInicio) && now.isBefore(horaFin))
-      backColor = azulBase;
+    if (now.isAfter(horaInicio) && now.isBefore(horaFin)) backColor = azulBase;
 
     return backColor;
   }
